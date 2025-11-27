@@ -8,6 +8,7 @@ describe("Test 2", () => {
   it("Go to forms", () => {
     cy.get(".Vaga_vagaLink__DeFkk").first().click();
     cy.get("input").should("have.length", 7);
+    cy.screenshot("Screen 1")
   });
 
   it("Must complet forms", () => {
@@ -31,5 +32,6 @@ describe("Test 2", () => {
     cy.on("window:alert", (conteudo) => {
       expect(conteudo).contain("Obrigado pela candidatura!");
     });
+    cy.screenshot("Screen 2")
   });
 });
